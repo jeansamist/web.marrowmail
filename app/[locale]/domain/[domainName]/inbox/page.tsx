@@ -144,10 +144,10 @@ export default function Page() {
   };
 
   return (
-    <div className="dark h-screen flex flex-col bg-sidebar">
+    <div className="h-screen flex flex-col bg-sidebar">
       <div className="h-16 flex pr-3">
         <div
-          className="w-auto md:w-[370px] h-full flex items-center px-4 md:px-6"
+          className="w-auto md:w-[388px] h-full flex items-center px-4 md:px-6"
           // style={{ width: SIDEBAR_WIDTH }}
         >
           <h1 className="text-2xl font-bold text-foreground whitespace-nowrap">
@@ -189,7 +189,7 @@ export default function Page() {
           </Button>
         </div>
       </div>
-      <div className="flex-1 flex px-0 md:px-3 min-h-0 relative overflow-hidden">
+      <div className="flex-1 flex px-0 md:px-3 gap-3 min-h-0 relative overflow-hidden">
         <AnimatePresence>
           {sidebarOpen && (
             <motion.div
@@ -207,11 +207,11 @@ export default function Page() {
           initial={false}
           animate={{ width: sidebarOpen ? SIDEBAR_WIDTH : 0 }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
-          className="absolute md:relative inset-y-0 left-0 z-20 md:z-auto h-full overflow-hidden shrink-0 bg-sidebar"
+          className="absolute md:relative rounded-tr-2xl sm:rounded-tr-none inset-y-0 left-0 z-20 md:z-auto h-full overflow-hidden shrink-0 bg-sidebar"
         >
           <div
             style={{ width: SIDEBAR_WIDTH }}
-            className="h-full pr-3 space-y-3 overflow-auto"
+            className="h-full p-3 sm:p-0  space-y-3 overflow-auto"
           >
             <div className="h-16 bg-background border rounded-2xl p-3 shadow flex items-center gap-3">
               <img
@@ -323,7 +323,7 @@ export default function Page() {
           </div>
         </motion.div>
         <div
-          className={`bg-background flex-1 h-full mr-3 border rounded-t-2xl shadow flex-col min-h-0 ${
+          className={`bg-background flex-1 h-full border rounded-t-2xl shadow flex-col min-h-0 ${
             mobileView === "list" ? "flex" : "hidden"
           } md:flex`}
         >
