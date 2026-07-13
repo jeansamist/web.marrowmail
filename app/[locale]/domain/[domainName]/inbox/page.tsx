@@ -151,7 +151,7 @@ export default function Page() {
           // style={{ width: SIDEBAR_WIDTH }}
         >
           <h1 className="text-2xl font-bold text-foreground whitespace-nowrap">
-            Marrow Mail
+            Marrow<span className="text-primary italic">mail</span>
           </h1>
         </div>
         <div className="flex-1 h-full py-3 flex gap-3 items-center">
@@ -455,7 +455,59 @@ export default function Page() {
             </div>
             <div className="text-sm text-foreground leading-relaxed">
               {selectedEmail.body}
-            </div>{" "}
+            </div>
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <img
+                  src={`https://avatarapi.runflare.run/public`}
+                  alt={"Avatar John Doe"}
+                  className="h-10 w-10 rounded-full bg-background"
+                />
+                <div>
+                  <div className="text-sm text-foreground">John Doe</div>
+                  <div className="text-xs text-muted-foreground">
+                    john.doe@example.com
+                  </div>
+                </div>
+              </div>
+              <div className="text-sm text-muted-foreground shrink-0">
+                10:00 AM
+              </div>
+            </div>
+            <div className="text-sm text-foreground leading-relaxed">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+              sunt fugit possimus sit? Accusantium facilis voluptas porro
+              mollitia veritatis totam quasi doloremque qui fuga nisi earum
+              maiores facere, debitis magni. Lorem ipsum, dolor sit amet
+              consectetur adipisicing elit. Incidunt quisquam corporis
+              voluptates voluptas quod ipsum aspernatur aliquid id tenetur
+              similique non sit aperiam, ipsa possimus libero magni! Maiores,
+              itaque ullam.
+            </div>
+            <div className="flex items-center gap-3">
+              <img
+                src={`https://avatarapi.runflare.run/public?usearname=${encodeURIComponent(
+                  selectedEmail.sender.split(" ")[0],
+                )}`}
+                alt={selectedEmail.sender}
+                className="h-10 w-10 rounded-full bg-background"
+              />
+              <div>
+                <div className="text-sm text-foreground">
+                  {selectedEmail.sender}
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  {selectedEmail.email}
+                </div>
+              </div>
+            </div>
+            <div className="text-sm text-foreground leading-relaxed">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+              sunt fugit possimus sit? Accusantium facilis voluptas porro
+              mollitia veritatis totam quasi doloremque qui fuga nisi earum
+              maiores facere, debitis magni. Lorem ipsum, dolor sit amet
+              consectetur adipisicing elit. Incidunt quisquam corporis.
+            </div>
             <div className="flex items-center gap-2">
               <Button
                 variant={"outline"}
