@@ -1,5 +1,16 @@
-import { buttonVariants } from "@/components/ui/button";
-import { ArrowRight, Check, Globe, XCircle } from "lucide-react";
+import { Button, buttonVariants } from "@/components/ui/button";
+import {
+  ArrowRight,
+  Bell,
+  Check,
+  Globe,
+  Languages,
+  Loader,
+  Lock,
+  Pen,
+  Users,
+  XCircle,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -165,7 +176,7 @@ export default function page() {
               how they perceive the business. A custom domain builds trust
               before the conversation starts.
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-3 mt-6">
               <div className="bg-muted border flex-1 rounded-2xl p-6 space-y-6">
                 <div className="flex items-center gap-3 text-muted-foreground">
                   <XCircle />
@@ -192,6 +203,104 @@ export default function page() {
                 </div>
                 <div className="text-base font-medium  text-primary">
                   Trust, before the conversation even starts.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="min-h-screen h-full py-22 mt-22 bg-accent">
+        <div className="container px-6 mx-auto">
+          <div className="space-y-3 ">
+            <div className="text-muted-foreground">FEATURES</div>
+            <div className="flex items-end justify-between">
+              <div className="text-5xl leading-normal flex-1 font-bold text-balance">
+                Everything you need to communicate professionally.
+              </div>
+              <div className="text-muted-foreground text-lg max-w-xl w-full">
+                Native productivity utilies built into the inbox - no add-ons,
+                no entreprise complexity.
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-3 mt-12">
+              <div className="bg-background shadow border rounded-2xl p-6 space-y-6">
+                <Button size="icon-lg" variant={"secondary"}>
+                  <Loader />
+                </Button>
+                <div className="space-y-1">
+                  <h3 className="font-semibold text-2xl">AI Email Summaries</h3>
+                  <p className="text-muted-foreground text-lg">
+                    Catch up on long email conversations instantly with
+                    AI-generated summaries.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-background shadow border rounded-2xl p-6 space-y-6">
+                <Button size="icon-lg" variant={"default"}>
+                  <Pen />
+                </Button>
+                <div className="space-y-1">
+                  <h3 className="font-semibold text-2xl">
+                    AI Rewrite Assistant
+                  </h3>
+                  <p className="text-muted-foreground text-lg">
+                    Turn rough drafts into polished professional emails in
+                    seconds.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-background shadow border rounded-2xl p-6 space-y-6">
+                <Button size="icon-lg" variant={"secondary"}>
+                  <Languages />
+                </Button>
+                <div className="space-y-1">
+                  <h3 className="font-semibold text-2xl">
+                    Built-in Translation
+                  </h3>
+                  <p className="text-muted-foreground text-lg">
+                    Read and reply to emails across languages directly from your
+                    inbox.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-background shadow border rounded-2xl p-6 space-y-6">
+                <Button size="icon-lg" variant={"default"}>
+                  <Bell />
+                </Button>
+                <div className="space-y-1">
+                  <h3 className="font-semibold text-2xl">
+                    Follow-up Reminders
+                  </h3>
+                  <p className="text-muted-foreground text-lg">
+                    Get reminded when clients haven&apos;t replied so
+                    opportunities never go cold.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-background shadow border rounded-2xl p-6 space-y-6">
+                <Button size="icon-lg" variant={"secondary"}>
+                  <Lock />
+                </Button>
+                <div className="space-y-1">
+                  <h3 className="font-semibold text-2xl">Private & Secure</h3>
+                  <p className="text-muted-foreground text-lg">
+                    Encrypted email. No ad targeting. No using your
+                    conversations for training.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-background shadow border rounded-2xl p-6 space-y-6">
+                <Button size="icon-lg" variant={"default"}>
+                  <Users />
+                </Button>
+                <div className="space-y-1">
+                  <h3 className="font-semibold text-2xl">
+                    Free Role-based Adrdresses
+                  </h3>
+                  <p className="text-muted-foreground text-lg">
+                    Create support@, sales@, info@, at no extra cost - up to 10
+                    of them.
+                  </p>
                 </div>
               </div>
             </div>
