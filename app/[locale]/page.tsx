@@ -14,6 +14,45 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
+const comparisonFeatures = [
+  {
+    label: "Starting price",
+    marrowmail: "2,500 CFA/mo",
+    google: "6,000 CFA/mo",
+    microsoft: "7,500 CFA/mo",
+  },
+  {
+    label: "Setup experience",
+    marrowmail: "Simple & guded",
+    google: "Complex & technical",
+    microsoft: "Complex & technical",
+  },
+  {
+    label: "Built-in AI tools",
+    marrowmail: "Included",
+    google: "Not included",
+    microsoft: "Not included",
+  },
+  {
+    label: "Role-based emails",
+    marrowmail: "Up to 10 free",
+    google: "Extra cost per user",
+    microsoft: "Extra cost per user",
+  },
+  {
+    label: "Payment options",
+    marrowmail: "Mobile Money + cards",
+    google: "Cards only",
+    microsoft: "Cards only",
+  },
+  {
+    label: "Focus",
+    marrowmail: "Email first productivity",
+    google: "Full office suite",
+    microsoft: "Full office suite",
+  },
+];
+
 export default function page() {
   return (
     <div>
@@ -126,34 +165,34 @@ export default function page() {
               <div className="absolute scale-105 inset-0 bg-linear-to-t from-accent via-accent/50 to-accent/0 pointer-events-none flex items-end">
                 <div className="py-6 border-y px-12 w-full grid grid-cols-4 bg-accent">
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-foreground text-4xl font-bold">
+                    <span className="text-foreground text-4xl font-bold line-clamp-1">
                       98.80%
                     </span>
-                    <span className="text-lg text-muted-foreground">
+                    <span className="text-lg text-muted-foreground line-clamp-1">
                       Email land in inbox, not spam.
                     </span>
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-foreground text-4xl font-bold">
+                    <span className="text-foreground text-4xl font-bold line-clamp-1">
                       10,000+
                     </span>
-                    <span className="text-lg text-muted-foreground">
+                    <span className="text-lg text-muted-foreground line-clamp-1">
                       Active mailboxes worldwide.
                     </span>
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-foreground text-4xl font-bold">
+                    <span className="text-foreground text-4xl font-bold line-clamp-1">
                       2,500 XAF
                     </span>
-                    <span className="text-lg text-muted-foreground">
+                    <span className="text-lg text-muted-foreground line-clamp-1">
                       Per mailbox / month.
                     </span>
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-foreground text-4xl font-bold">
+                    <span className="text-foreground text-4xl font-bold line-clamp-1">
                       SMEs
                     </span>
-                    <span className="text-lg text-muted-foreground">
+                    <span className="text-lg text-muted-foreground line-clamp-1">
                       Built for small budgets.
                     </span>
                   </div>
@@ -176,7 +215,7 @@ export default function page() {
               how they perceive the business. A custom domain builds trust
               before the conversation starts.
             </div>
-            <div className="flex gap-3 mt-6">
+            <div className="flex flex-col lg:flex-row gap-3 mt-6">
               <div className="bg-muted border flex-1 rounded-2xl p-6 space-y-6">
                 <div className="flex items-center gap-3 text-muted-foreground">
                   <XCircle />
@@ -209,11 +248,11 @@ export default function page() {
           </div>
         </div>
       </div>
-      <div className="min-h-screen h-full py-22 mt-22 bg-accent">
+      <div className="py-22 mt-22 bg-accent">
         <div className="container px-6 mx-auto">
           <div className="space-y-3 ">
             <div className="text-muted-foreground">FEATURES</div>
-            <div className="flex items-end justify-between">
+            <div className="lg:flex items-end justify-between">
               <div className="text-5xl leading-normal flex-1 font-bold text-balance">
                 Everything you need to communicate professionally.
               </div>
@@ -222,7 +261,7 @@ export default function page() {
                 no entreprise complexity.
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-3 mt-12">
+            <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3 mt-12">
               <div className="bg-background shadow border rounded-2xl p-6 space-y-6">
                 <Button size="icon-lg" variant={"secondary"}>
                   <Loader />
@@ -302,6 +341,174 @@ export default function page() {
                     of them.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="py-22">
+        <div className="container px-6 mx-auto space-y-12">
+          <div className="space-y-3 text-center">
+            <div className="text-muted-foreground">COMPARE</div>
+            <div className="text-5xl leading-normal flex-1 font-bold text-balance">
+              Why businesses choose MarrowMail.
+            </div>
+            <div className="text-muted-foreground text-lg max-w-xl w-full mx-auto">
+              Built for professional comunnication - without the entreprise
+              clutter.
+            </div>
+          </div>
+          <div className="hidden xl:flex w-full border border-primary shadow rounded-2xl bg-muted/5">
+            <div className="max-w-xl w-full">
+              <div className="p-6 h-[105.6px]">
+                <div className="text-sm text-muted-foreground">FEATURE</div>
+              </div>
+              {comparisonFeatures.map((feature) => (
+                <div
+                  key={feature.label}
+                  className="px-6 py-4 border-t text-foreground"
+                >
+                  {feature.label}
+                </div>
+              ))}
+              <div className="h-16 border-t border-primary"></div>
+            </div>
+            <div className="flex-1 border-x border-primary bg-primary/10">
+              <div className="p-6 bg-primary h-[105.6px]">
+                <div className="text-sm text-primary-foreground/80">
+                  OUR PICK
+                </div>
+                <div className="text-lg font-bold text-primary-foreground">
+                  MarrowMail
+                </div>
+              </div>
+              {comparisonFeatures.map((feature) => (
+                <div
+                  key={feature.label}
+                  className="px-6 py-4 border-t text-foreground font-semibold line-clamp-1"
+                >
+                  {feature.marrowmail}
+                </div>
+              ))}
+              <div className="h-16 border-t border-primary px-6 flex items-center">
+                <Button className={"w-full"}>
+                  Get my email <ArrowRight />
+                </Button>
+              </div>
+            </div>
+            <div className="flex-1">
+              <div className="p-6 h-[105.6px]">
+                <div className="text-sm text-muted-foreground">COMPETITOR</div>
+                <div className="text-lg font-bold text-foreground line-clamp-1">
+                  Google Workspace
+                </div>
+              </div>
+              {comparisonFeatures.map((feature) => (
+                <div
+                  key={feature.label}
+                  className="px-6 py-4 border-t text-muted-foreground line-clamp-1"
+                >
+                  {feature.google}
+                </div>
+              ))}
+              <div className="h-16 border-t border-t-primary"></div>
+            </div>
+            <div className="flex-1">
+              <div className="p-6 h-[105.6px]">
+                <div className="text-sm text-muted-foreground">COMPETITOR</div>
+                <div className="text-lg font-bold text-foreground line-clamp-1">
+                  Microsoft 365
+                </div>
+              </div>
+              {comparisonFeatures.map((feature) => (
+                <div
+                  key={feature.label}
+                  className="px-6 py-4 border-t text-muted-foreground line-clamp-1"
+                >
+                  {feature.microsoft}
+                </div>
+              ))}
+              <div className="h-16 border-t border-t-primary"></div>
+            </div>
+          </div>
+
+          <div className="flex xl:hidden flex-col gap-4">
+            <div className="rounded-2xl border-2 border-primary bg-primary/10 overflow-hidden">
+              <div className="p-6 bg-primary">
+                <div className="text-sm text-primary-foreground/80">
+                  OUR PICK
+                </div>
+                <div className="text-lg font-bold text-primary-foreground">
+                  MarrowMail
+                </div>
+              </div>
+              <div className="divide-y divide-primary/20">
+                {comparisonFeatures.map((feature) => (
+                  <div
+                    key={feature.label}
+                    className="px-6 py-3 flex items-center justify-between gap-3"
+                  >
+                    <span className="text-sm text-muted-foreground">
+                      {feature.label}
+                    </span>
+                    <span className="text-foreground font-semibold text-right">
+                      {feature.marrowmail}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="p-6 pt-2">
+                <Button className={"w-full"}>
+                  Get my email <ArrowRight />
+                </Button>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border bg-muted/5 overflow-hidden">
+              <div className="p-6">
+                <div className="text-sm text-muted-foreground">COMPETITOR</div>
+                <div className="text-lg font-bold text-foreground">
+                  Google Workspace
+                </div>
+              </div>
+              <div className="divide-y">
+                {comparisonFeatures.map((feature) => (
+                  <div
+                    key={feature.label}
+                    className="px-6 py-3 flex items-center justify-between gap-3"
+                  >
+                    <span className="text-sm text-muted-foreground">
+                      {feature.label}
+                    </span>
+                    <span className="text-foreground text-right">
+                      {feature.google}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border bg-muted/5 overflow-hidden">
+              <div className="p-6">
+                <div className="text-sm text-muted-foreground">COMPETITOR</div>
+                <div className="text-lg font-bold text-foreground">
+                  Microsoft 365
+                </div>
+              </div>
+              <div className="divide-y">
+                {comparisonFeatures.map((feature) => (
+                  <div
+                    key={feature.label}
+                    className="px-6 py-3 flex items-center justify-between gap-3"
+                  >
+                    <span className="text-sm text-muted-foreground">
+                      {feature.label}
+                    </span>
+                    <span className="text-foreground text-right">
+                      {feature.microsoft}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
