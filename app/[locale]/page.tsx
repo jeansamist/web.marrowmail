@@ -146,7 +146,7 @@ export default function page() {
         <div className="h-16 w-full border-b">
           <div className="container mx-auto h-16 flex items-center justify-between">
             <div className="flex items-center gap-6">
-              <h1 className="text-2xl font-bold text-foreground whitespace-nowrap">
+              <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground whitespace-nowrap">
                 Marrow<span className="text-primary italic">mail</span>
               </h1>
               <Link
@@ -199,17 +199,17 @@ export default function page() {
           </div>
         </div>
         <div className="flex-1 py-22">
-          <div className="container mx-auto flex flex-col gap-1.5">
+          <div className="container px-6 mx-auto flex flex-col gap-1.5">
             <div>
-              <div className="px-3 py-1.5 border rounded-2xl bg-background text-muted-foreground inline-flex items-center gap-3">
+              <div className="px-3 py-1.5 border rounded-2xl bg-background text-xs md:text-base text-muted-foreground inline-flex items-center gap-3">
                 <span className="w-3 h-3 rounded-full bg-primary"></span>
                 AVAILABLE NOW - PAY WITH MOBILE MONEY
               </div>
             </div>
-            <h1 className="text-7xl leading-normal font-bold text-foreground">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-normal font-bold text-foreground">
               Your business deserves better than a Gmail address.
             </h1>
-            <p className="text-3xl leading-normal text-muted-foreground">
+            <p className="text-xl sm:text-2xl lg:text-3xl leading-normal text-muted-foreground">
               Professional business email with your own domain, AI-powered
               tools, high inbox deliverability, and a focus on privacy. All in
               one place and setup in minutes.
@@ -229,8 +229,8 @@ export default function page() {
                 See pricing
               </Link>
             </div>
-            <div className="mt-22 relative p-1.5 rounded-2xl bg-background flex-col border shadow w-full space-y-1.5">
-              <div className="pl-3 flex gap-3 items-center">
+            <div className="mt-6 sm:mt-22 relative p-1.5 rounded-2xl bg-background flex-col border shadow w-full space-y-1.5">
+              <div className="hidden pl-3 md:flex gap-3 items-center">
                 <div className="flex gap-1.5">
                   <div className="h-3 w-3 rounded-full bg-red-500" />
                   <div className="h-3 w-3 rounded-full bg-yellow-500" />
@@ -238,7 +238,9 @@ export default function page() {
                 </div>
                 <div className="text-sm flex-1 text-muted-foreground flex bg-input rounded-2xl px-3 py-1.5 gap-3 items-center">
                   <Globe size={16} />
-                  <span>https://mail.your-domain.com</span>
+                  <span className="line-clamp-1">
+                    https://mail.your-domain.com
+                  </span>
                 </div>
               </div>
               <Image
@@ -248,37 +250,37 @@ export default function page() {
                 height={1080}
                 className="w-full! h-auto! rounded-2xl"
               />
-              <div className="absolute scale-105 inset-0 bg-linear-to-t from-accent via-accent/50 to-accent/0 pointer-events-none flex items-end">
-                <div className="py-6 border-y px-12 w-full grid grid-cols-4 bg-accent">
+              <div className="sm:absolute scale-105 inset-0 bg-linear-to-t from-accent via-accent/50 to-accent/0 pointer-events-none flex items-end">
+                <div className="py-4 sm:py-6 border-y px-4 sm:px-6 lg:px-12 w-full grid sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-4 sm:gap-y-6 bg-accent">
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-foreground text-4xl font-bold line-clamp-1">
+                    <span className="text-foreground text-2xl sm:text-3xl lg:text-4xl font-bold line-clamp-1">
                       98.80%
                     </span>
-                    <span className="text-lg text-muted-foreground line-clamp-1">
+                    <span className="text-sm sm:text-base lg:text-lg text-muted-foreground line-clamp-1">
                       Email land in inbox, not spam.
                     </span>
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-foreground text-4xl font-bold line-clamp-1">
+                    <span className="text-foreground text-2xl sm:text-3xl lg:text-4xl font-bold line-clamp-1">
                       10,000+
                     </span>
-                    <span className="text-lg text-muted-foreground line-clamp-1">
+                    <span className="text-sm sm:text-base lg:text-lg text-muted-foreground line-clamp-1">
                       Active mailboxes worldwide.
                     </span>
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-foreground text-4xl font-bold line-clamp-1">
+                    <span className="text-foreground text-2xl sm:text-3xl lg:text-4xl font-bold line-clamp-1">
                       2,500 XAF
                     </span>
-                    <span className="text-lg text-muted-foreground line-clamp-1">
+                    <span className="text-sm sm:text-base lg:text-lg text-muted-foreground line-clamp-1">
                       Per mailbox / month.
                     </span>
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-foreground text-4xl font-bold line-clamp-1">
+                    <span className="text-foreground text-2xl sm:text-3xl lg:text-4xl font-bold line-clamp-1">
                       SMEs
                     </span>
-                    <span className="text-lg text-muted-foreground line-clamp-1">
+                    <span className="text-sm sm:text-base lg:text-lg text-muted-foreground line-clamp-1">
                       Built for small budgets.
                     </span>
                   </div>
@@ -293,10 +295,10 @@ export default function page() {
         <div className="container px-6 mx-auto">
           <div className="space-y-3 ">
             <div className="text-muted-foreground">POSITIONING</div>
-            <div className="text-5xl leading-normal max-w-5xl w-full font-bold text-balance">
+            <div className="text-3xl sm:text-4xl lg:text-5xl leading-normal max-w-5xl w-full font-bold text-balance">
               Look professional every time you hit send.
             </div>
-            <div className="text-muted-foreground text-lg max-w-5xl w-full text-balance">
+            <div className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-5xl w-full text-balance">
               When a client receives an email from a free address, it changes
               how they perceive the business. A custom domain builds trust
               before the conversation starts.
@@ -305,10 +307,14 @@ export default function page() {
               <div className="bg-muted border flex-1 rounded-2xl p-6 space-y-6">
                 <div className="flex items-center gap-3 text-muted-foreground">
                   <XCircle />
-                  <div className="text-lg font-medium">THE WRONG WAY</div>
+                  <div className="text-sm sm:text-base lg:text-lg font-medium">
+                    THE WRONG WAY
+                  </div>
                 </div>
                 <div className="p-6 py-3 border rounded-xl bg-background">
-                  <span className="text-lg">ccovicator2019@gmail.com</span>
+                  <span className="text-sm sm:text-base lg:text-lg">
+                    ccovicator2019@gmail.com
+                  </span>
                 </div>
                 <div className="text-base font-medium  text-muted-foreground">
                   &quot;Is this a real business ?&quot; - the question evry
@@ -321,10 +327,14 @@ export default function page() {
                   <div className="absolute top-0 right-0 bg-primary text-primary-foreground rounded-bl-2xl p-2 px-4">
                     THE MARROWMAIL WAY
                   </div>
-                  <div className="text-lg font-medium">CUSTOM DOMAIN</div>
+                  <div className="text-sm sm:text-base lg:text-lg font-medium">
+                    CUSTOM DOMAIN
+                  </div>
                 </div>
                 <div className="p-6 py-3 border border-primary rounded-xl bg-background">
-                  <span className="text-lg">victor@yourcompany.com</span>
+                  <span className="text-sm sm:text-base lg:text-lg">
+                    victor@yourcompany.com
+                  </span>
                 </div>
                 <div className="text-base font-medium  text-primary">
                   Trust, before the conversation even starts.
@@ -339,10 +349,10 @@ export default function page() {
           <div className="space-y-3 ">
             <div className="text-muted-foreground">FEATURES</div>
             <div className="lg:flex items-end justify-between">
-              <div className="text-5xl leading-normal flex-1 font-bold text-balance">
+              <div className="text-3xl sm:text-4xl lg:text-5xl leading-normal flex-1 font-bold text-balance">
                 Everything you need to communicate professionally.
               </div>
-              <div className="text-muted-foreground text-lg max-w-xl w-full">
+              <div className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-xl w-full">
                 Native productivity utilies built into the inbox - no add-ons,
                 no entreprise complexity.
               </div>
@@ -353,8 +363,10 @@ export default function page() {
                   <Loader />
                 </Button>
                 <div className="space-y-1">
-                  <h3 className="font-semibold text-2xl">AI Email Summaries</h3>
-                  <p className="text-muted-foreground text-lg">
+                  <h3 className="font-semibold text-lg sm:text-xl lg:text-2xl">
+                    AI Email Summaries
+                  </h3>
+                  <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">
                     Catch up on long email conversations instantly with
                     AI-generated summaries.
                   </p>
@@ -365,10 +377,10 @@ export default function page() {
                   <Pen />
                 </Button>
                 <div className="space-y-1">
-                  <h3 className="font-semibold text-2xl">
+                  <h3 className="font-semibold text-lg sm:text-xl lg:text-2xl">
                     AI Rewrite Assistant
                   </h3>
-                  <p className="text-muted-foreground text-lg">
+                  <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">
                     Turn rough drafts into polished professional emails in
                     seconds.
                   </p>
@@ -379,10 +391,10 @@ export default function page() {
                   <Languages />
                 </Button>
                 <div className="space-y-1">
-                  <h3 className="font-semibold text-2xl">
+                  <h3 className="font-semibold text-lg sm:text-xl lg:text-2xl">
                     Built-in Translation
                   </h3>
-                  <p className="text-muted-foreground text-lg">
+                  <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">
                     Read and reply to emails across languages directly from your
                     inbox.
                   </p>
@@ -393,10 +405,10 @@ export default function page() {
                   <Bell />
                 </Button>
                 <div className="space-y-1">
-                  <h3 className="font-semibold text-2xl">
+                  <h3 className="font-semibold text-lg sm:text-xl lg:text-2xl">
                     Follow-up Reminders
                   </h3>
-                  <p className="text-muted-foreground text-lg">
+                  <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">
                     Get reminded when clients haven&apos;t replied so
                     opportunities never go cold.
                   </p>
@@ -407,8 +419,10 @@ export default function page() {
                   <Lock />
                 </Button>
                 <div className="space-y-1">
-                  <h3 className="font-semibold text-2xl">Private & Secure</h3>
-                  <p className="text-muted-foreground text-lg">
+                  <h3 className="font-semibold text-lg sm:text-xl lg:text-2xl">
+                    Private & Secure
+                  </h3>
+                  <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">
                     Encrypted email. No ad targeting. No using your
                     conversations for training.
                   </p>
@@ -419,10 +433,10 @@ export default function page() {
                   <Users />
                 </Button>
                 <div className="space-y-1">
-                  <h3 className="font-semibold text-2xl">
+                  <h3 className="font-semibold text-lg sm:text-xl lg:text-2xl">
                     Free Role-based Adrdresses
                   </h3>
-                  <p className="text-muted-foreground text-lg">
+                  <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">
                     Create support@, sales@, info@, at no extra cost - up to 10
                     of them.
                   </p>
@@ -436,10 +450,10 @@ export default function page() {
         <div className="container px-6 mx-auto space-y-12">
           <div className="space-y-3 text-center">
             <div className="text-muted-foreground">COMPARE</div>
-            <div className="text-5xl leading-normal flex-1 font-bold text-balance">
+            <div className="text-3xl sm:text-4xl lg:text-5xl leading-normal flex-1 font-bold text-balance">
               Why businesses choose MarrowMail.
             </div>
-            <div className="text-muted-foreground text-lg max-w-xl w-full mx-auto">
+            <div className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-xl w-full mx-auto">
               Built for professional comunnication - without the entreprise
               clutter.
             </div>
@@ -464,7 +478,7 @@ export default function page() {
                 <div className="text-sm text-primary-foreground/80">
                   OUR PICK
                 </div>
-                <div className="text-lg font-bold text-primary-foreground">
+                <div className="text-sm sm:text-base lg:text-lg font-bold text-primary-foreground">
                   MarrowMail
                 </div>
               </div>
@@ -485,7 +499,7 @@ export default function page() {
             <div className="flex-1">
               <div className="p-6 h-[105.6px]">
                 <div className="text-sm text-muted-foreground">COMPETITOR</div>
-                <div className="text-lg font-bold text-foreground line-clamp-1">
+                <div className="text-sm sm:text-base lg:text-lg font-bold text-foreground line-clamp-1">
                   Google Workspace
                 </div>
               </div>
@@ -502,7 +516,7 @@ export default function page() {
             <div className="flex-1">
               <div className="p-6 h-[105.6px]">
                 <div className="text-sm text-muted-foreground">COMPETITOR</div>
-                <div className="text-lg font-bold text-foreground line-clamp-1">
+                <div className="text-sm sm:text-base lg:text-lg font-bold text-foreground line-clamp-1">
                   Microsoft 365
                 </div>
               </div>
@@ -524,7 +538,7 @@ export default function page() {
                 <div className="text-sm text-primary-foreground/80">
                   OUR PICK
                 </div>
-                <div className="text-lg font-bold text-primary-foreground">
+                <div className="text-sm sm:text-base lg:text-lg font-bold text-primary-foreground">
                   MarrowMail
                 </div>
               </div>
@@ -553,7 +567,7 @@ export default function page() {
             <div className="rounded-2xl border bg-muted/5 overflow-hidden">
               <div className="p-6">
                 <div className="text-sm text-muted-foreground">COMPETITOR</div>
-                <div className="text-lg font-bold text-foreground">
+                <div className="text-sm sm:text-base lg:text-lg font-bold text-foreground">
                   Google Workspace
                 </div>
               </div>
@@ -577,7 +591,7 @@ export default function page() {
             <div className="rounded-2xl border bg-muted/5 overflow-hidden">
               <div className="p-6">
                 <div className="text-sm text-muted-foreground">COMPETITOR</div>
-                <div className="text-lg font-bold text-foreground">
+                <div className="text-sm sm:text-base lg:text-lg font-bold text-foreground">
                   Microsoft 365
                 </div>
               </div>
@@ -608,7 +622,7 @@ export default function page() {
         <div className="container px-6 mx-auto">
           <div className="space-y-3 text-center">
             <div className="text-muted-foreground">TESTIMONIALS</div>
-            <div className="text-5xl leading-normal flex-1 font-bold w-full mx-auto">
+            <div className="text-3xl sm:text-4xl lg:text-5xl leading-normal flex-1 font-bold w-full mx-auto">
               Businesses are already making the switch.
             </div>
           </div>
@@ -623,7 +637,7 @@ export default function page() {
                     <Star key={i} className="w-4 h-4 fill-primary" />
                   ))}
                 </div>
-                <p className="text-foreground text-lg leading-relaxed line-clamp-4">
+                <p className="text-foreground text-sm sm:text-base lg:text-lg leading-relaxed line-clamp-4">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3 pt-2">
@@ -649,10 +663,10 @@ export default function page() {
           <div className="lg:flex items-center justify-between gap-12">
             <div className="space-y-3 max-w-md">
               <div className="text-muted-foreground">RELIABILITY</div>
-              <div className="text-5xl leading-normal font-bold text-balance">
+              <div className="text-3xl sm:text-4xl lg:text-5xl leading-normal font-bold text-balance">
                 Email infrastructure you can depend on.
               </div>
-              <div className="text-muted-foreground text-lg text-balance">
+              <div className="text-muted-foreground text-sm sm:text-base lg:text-lg text-balance">
                 Your email is one of the most important parts of your business
                 communication. MarrowMail is built to keep it reliable, secure,
                 and professional.
@@ -682,10 +696,10 @@ export default function page() {
         <div className="container px-6 mx-auto">
           <div className="space-y-3 text-center">
             <div className="text-muted-foreground">PRICING</div>
-            <div className="text-5xl leading-normal font-bold text-balance">
+            <div className="text-3xl sm:text-4xl lg:text-5xl leading-normal font-bold text-balance">
               Simple pricing. Everything included.
             </div>
-            <div className="text-muted-foreground text-lg max-w-xl w-full mx-auto">
+            <div className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-xl w-full mx-auto">
               One plan. No tiers. No &quot;AI add-on&quot; upsells. Cancel any
               time.
             </div>
@@ -700,7 +714,7 @@ export default function page() {
                 <div>
                   <div className="text-sm text-muted-foreground">CORE PLAN</div>
                   <div className="flex items-end gap-2">
-                    <span className="text-6xl font-bold text-primary">
+                    <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary">
                       2,500
                     </span>
                     <div className="text-sm text-muted-foreground pb-1">
@@ -727,7 +741,7 @@ export default function page() {
                   </div>
                 </div>
               </div>
-              <div className="border-t pt-6 text-muted-foreground text-lg">
+              <div className="border-t pt-6 text-muted-foreground text-sm sm:text-base lg:text-lg">
                 Professional business email with AI-powered tools, secure
                 hosting, and flexible payments. Everything you need to
                 communicate professionally — in one price.
@@ -771,7 +785,7 @@ export default function page() {
         <div className="container px-6 mx-auto">
           <div className="space-y-3 text-center">
             <div className="text-muted-foreground">FAQ</div>
-            <div className="text-5xl leading-normal font-bold text-balance">
+            <div className="text-3xl sm:text-4xl lg:text-5xl leading-normal font-bold text-balance">
               Frequently asked.
             </div>
           </div>
@@ -782,7 +796,7 @@ export default function page() {
             {faqs.map((faq) => (
               <AccordionItem key={faq.value} value={faq.value}>
                 <AccordionTrigger className="**:data-[slot=accordion-trigger-icon]:hidden py-6 hover:no-underline">
-                  <span className="text-lg font-semibold text-foreground">
+                  <span className="text-sm sm:text-base lg:text-lg font-semibold text-foreground">
                     {faq.question}
                   </span>
                   <span className="group-aria-expanded/accordion-trigger:bg-primary group-aria-expanded/accordion-trigger:border-primary ml-4 flex size-8 shrink-0 items-center justify-center rounded-full border border-muted-foreground/30 text-muted-foreground">
@@ -800,10 +814,10 @@ export default function page() {
       <div className="bg-secondary py-22 text-center">
         <div className="container px-6 mx-auto space-y-6">
           <div className="text-secondary-foreground/60">GET STARTED</div>
-          <div className="text-secondary-foreground max-w-4xl w-full mx-auto text-6xl leading-normal font-bold text-balance">
+          <div className="text-secondary-foreground max-w-4xl w-full mx-auto text-4xl sm:text-5xl lg:text-6xl leading-normal font-bold text-balance">
             Your business deserves to look professional.
           </div>
-          <div className="text-secondary-foreground/70 text-lg max-w-2xl w-full mx-auto text-balance">
+          <div className="text-secondary-foreground/70 text-sm sm:text-base lg:text-lg max-w-2xl w-full mx-auto text-balance">
             Join thousands of businesses already using MarrowMail to build
             trust, communicate better, and grow faster.
           </div>
@@ -821,7 +835,7 @@ export default function page() {
         <div className="container px-6 mx-auto py-16">
           <div className="grid lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-12">
             <div className="space-y-4 max-w-sm">
-              <h2 className="text-2xl font-bold text-foreground">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground">
                 Marrow<span className="text-primary italic">mail</span>
               </h2>
               <p className="text-muted-foreground">
