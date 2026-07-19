@@ -23,8 +23,8 @@ export default function RootLayout({
             Business email, without the bloat
           </div>
           <div className="space-y-1.5">
-            <div className="text-2xl sm:text-3xl lg:text-4xl leading-normal w-full font-bold">
-              Create your Marrow
+            <div className="text-2xl sm:text-3xl lg:text-4xl leading-normal text-foreground w-full font-bold">
+              Your Marrow
               <span className="text-primary italic">mail</span> account
             </div>
             <div className="text-muted-foreground text-sm sm:text-base lg:text-lg w-full">

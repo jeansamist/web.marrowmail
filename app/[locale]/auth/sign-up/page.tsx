@@ -1,3 +1,4 @@
+import { SignUpForm } from "@/components/forms/sign-up.form";
 import { Button } from "@/components/ui/button";
 
 export default function page() {
@@ -11,7 +12,7 @@ export default function page() {
           Fill in the form below or use thirth part service.
         </div>
       </div>
-      <div className="flex gap-3 w-full">
+      <div className="flex gap-3 w-full flex-wrap">
         <Button variant={"outline"} className={"flex-1"} size={"lg"}>
           <img
             src="/google.svg"
@@ -35,6 +36,9 @@ export default function page() {
         <div className="h-px bg-border flex-1"></div>
         <div className="text-muted-foreground">OR</div>
         <div className="h-px bg-border flex-1"></div>
+      </div>
+      <div className="w-full">
+        <SignUpForm />
       </div>
     </div>
   );
