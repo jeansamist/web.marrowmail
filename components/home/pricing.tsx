@@ -17,7 +17,7 @@ const includedItems = [
 
 export function Pricing() {
   return (
-    <div className="py-22">
+    <div id="pricing" className="py-22">
       <div className="container px-6 mx-auto">
         <div className="space-y-3 text-center">
           <div className="text-muted-foreground">PRICING</div>

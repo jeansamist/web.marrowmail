@@ -48,7 +48,7 @@ const faqs = [
 
 export function Faq() {
   return (
-    <div className="py-22 bg-muted">
+    <div id="faq" className="py-22 bg-muted">
       <div className="container px-6 mx-auto">
         <div className="space-y-3 text-center">
           <div className="text-muted-foreground">FAQ</div>

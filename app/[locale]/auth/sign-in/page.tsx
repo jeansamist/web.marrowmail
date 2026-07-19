@@ -12,7 +12,7 @@ export default function page() {
           Fill in the form below or use thirth part service.
         </div>
       </div>
-      <div className="flex gap-3 w-full">
+      <div className="flex gap-3 w-full flex-wrap">
         <Button variant={"outline"} className={"flex-1"} size={"lg"}>
           <img
             src="/google.svg"

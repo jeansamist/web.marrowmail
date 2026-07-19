@@ -49,7 +49,7 @@ const features = [
 
 export function Features() {
   return (
-    <div className="py-22 mt-22 bg-accent">
+    <div id="features" className="py-22 mt-22 bg-accent">
       <div className="container px-6 mx-auto">
         <div className="space-y-3 ">
           <div className="text-muted-foreground">FEATURES</div>

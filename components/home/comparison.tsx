@@ -44,7 +44,7 @@ const comparisonFeatures = [
 
 export function Comparison() {
   return (
-    <div className="py-22">
+    <div id="compare" className="py-22">
       <div className="container px-6 mx-auto space-y-12">
         <div className="space-y-3 text-center">
           <div className="text-muted-foreground">COMPARE</div>

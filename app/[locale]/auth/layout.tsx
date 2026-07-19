@@ -14,6 +14,7 @@ export default function RootLayout({
     <div className="h-screen w-full bg-sidebar p-3 flex gap-3 flex-col xl:flex-row overflow-hidden">
       <div className="flex-1 bg-background rounded-2xl border shadow-sm p-6 overflow-auto">
         {children}
+        <div className="h-22 md:hidden"></div>
       </div>
       <div className="max-w-2xl hidden xl:flex items-end p-6 relative">
         <div className="w-1/2 aspect-square rounded-full translate-x-1/2 -translate-y-1/2 absolute top-0 right-0 border-100"></div>

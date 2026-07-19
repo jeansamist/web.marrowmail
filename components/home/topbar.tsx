@@ -14,11 +14,11 @@ import {
 import { useCurrentLocaleUrl } from "@/lib/i18n/client";
 
 const navLinks = [
-  { label: "Features", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Compare", href: "#" },
-  { label: "FAQ", href: "#" },
-  { label: "Support", href: "#" },
+  { label: "Features", href: "#features" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Compare", href: "#compare" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Support", href: "#support" },
 ];
 
 export function Topbar() {

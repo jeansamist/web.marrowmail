@@ -11,7 +11,7 @@ const includedItems = [
 
 export function Reliability() {
   return (
-    <div className="py-22 bg-muted">
+    <div id="support" className="py-22 bg-muted">
       <div className="container px-6 mx-auto">
         <div className="lg:flex items-center justify-between gap-12">
           <div className="space-y-3 max-w-md">
