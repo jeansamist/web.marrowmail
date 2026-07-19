@@ -1,5 +1,6 @@
 import { Bell, Languages, Loader, Lock, Pen, Users } from "lucide-react";
 
+import { Reveal } from "@/components/motion-primitives/reveal";
 import { Button } from "@/components/ui/button";
 
 const features = [
@@ -54,18 +55,22 @@ export function Features() {
         <div className="space-y-3 ">
           <div className="text-muted-foreground">FEATURES</div>
           <div className="lg:flex items-end justify-between">
-            <div className="text-3xl sm:text-4xl lg:text-5xl leading-normal flex-1 font-bold text-balance">
+            <Reveal className="flex-1 text-3xl sm:text-4xl lg:text-5xl leading-normal font-bold text-balance">
               Everything you need to communicate professionally.
-            </div>
-            <div className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-xl w-full">
+            </Reveal>
+            <Reveal
+              delay={0.2}
+              className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-xl w-full"
+            >
               Native productivity utilies built into the inbox - no add-ons,
               no entreprise complexity.
-            </div>
+            </Reveal>
           </div>
           <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3 mt-12">
-            {features.map((feature) => (
-              <div
+            {features.map((feature, index) => (
+              <Reveal
                 key={feature.title}
+                delay={(index % 3) * 0.1}
                 className="bg-background shadow border rounded-2xl p-6 space-y-6"
               >
                 <Button size="icon-lg" variant={feature.variant}>
@@ -79,7 +84,7 @@ export function Features() {
                     {feature.description}
                   </p>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

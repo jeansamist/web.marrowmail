@@ -1,5 +1,6 @@
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 
+import { Reveal } from "@/components/motion-primitives/reveal";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -21,15 +22,21 @@ export function Pricing() {
       <div className="container px-6 mx-auto">
         <div className="space-y-3 text-center">
           <div className="text-muted-foreground">PRICING</div>
-          <div className="text-3xl sm:text-4xl lg:text-5xl leading-normal font-bold text-balance">
+          <Reveal className="text-3xl sm:text-4xl lg:text-5xl leading-normal font-bold text-balance">
             Simple pricing. Everything included.
-          </div>
-          <div className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-xl w-full mx-auto">
+          </Reveal>
+          <Reveal
+            delay={0.2}
+            className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-xl w-full mx-auto"
+          >
             One plan. No tiers. No &quot;AI add-on&quot; upsells. Cancel any
             time.
-          </div>
+          </Reveal>
         </div>
-        <div className="max-w-2xl w-full mx-auto mt-12 rounded-2xl border border-primary shadow bg-background overflow-hidden">
+        <Reveal
+          delay={0.15}
+          className="max-w-2xl w-full mx-auto mt-12 rounded-2xl border border-primary shadow bg-background overflow-hidden"
+        >
           <div className="bg-primary text-primary-foreground text-xs px-6 py-2 flex flex-wrap items-center justify-between gap-2">
             <span>★ CORE PLAN — RECOMMENDED FOR EVERY BUSINESS SIZE</span>
             <span>NO CONTRACTS · CANCEL ANYTIME</span>
@@ -87,15 +94,13 @@ export function Pricing() {
               </div>
             </div>
             <Button size="lg" className="w-full">
-              <Link href={"/auth/sign-up"}>
-                Get my business email <ArrowRight />
-              </Link>
+              <Link href={"/auth/sign-up"}>Get my business email</Link>
             </Button>
             <div className="text-center text-sm text-muted-foreground">
               SETUP IN MINUTES · NO CARD REQUIRED TO START
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </div>
   );

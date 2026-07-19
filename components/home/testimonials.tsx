@@ -1,5 +1,7 @@
 import { Star } from "lucide-react";
 
+import { Reveal } from "@/components/motion-primitives/reveal";
+
 const testimonials = [
   {
     quote:
@@ -30,14 +32,15 @@ export function Testimonials() {
       <div className="container px-6 mx-auto">
         <div className="space-y-3 text-center">
           <div className="text-muted-foreground">TESTIMONIALS</div>
-          <div className="text-3xl sm:text-4xl lg:text-5xl leading-normal flex-1 font-bold w-full mx-auto">
+          <Reveal className="text-3xl sm:text-4xl lg:text-5xl leading-normal font-bold w-full mx-auto">
             Businesses are already making the switch.
-          </div>
+          </Reveal>
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((testimonial) => (
-            <div
+          {testimonials.map((testimonial, index) => (
+            <Reveal
               key={testimonial.fullName}
+              delay={index * 0.1}
               className="rounded-2xl border bg-background p-6 space-y-6"
             >
               <div className="flex gap-1 text-primary">
@@ -61,7 +64,7 @@ export function Testimonials() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/motion-primitives/reveal";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -46,15 +47,21 @@ export function Comparison() {
       <div className="container px-6 mx-auto space-y-12">
         <div className="space-y-3 text-center">
           <div className="text-muted-foreground">COMPARE</div>
-          <div className="text-3xl sm:text-4xl lg:text-5xl leading-normal flex-1 font-bold text-balance">
+          <Reveal className="text-3xl sm:text-4xl lg:text-5xl leading-normal font-bold text-balance">
             Why businesses choose MarrowMail.
-          </div>
-          <div className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-xl w-full mx-auto">
+          </Reveal>
+          <Reveal
+            delay={0.2}
+            className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-xl w-full mx-auto"
+          >
             Built for professional comunnication - without the entreprise
             clutter.
-          </div>
+          </Reveal>
         </div>
-        <div className="hidden xl:flex w-full border border-primary shadow rounded-2xl bg-muted/5">
+        <Reveal
+          delay={0.15}
+          className="hidden xl:flex w-full border border-primary shadow rounded-2xl bg-muted/5"
+        >
           <div className="max-w-xl w-full">
             <div className="p-6 h-[105.6px]">
               <div className="text-sm text-muted-foreground">FEATURE</div>
@@ -124,9 +131,12 @@ export function Comparison() {
             ))}
             <div className="h-16 border-t border-t-primary"></div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="flex xl:hidden flex-col gap-4">
+        <Reveal
+          delay={0.15}
+          className="flex xl:hidden flex-col gap-4"
+        >
           <div className="rounded-2xl border-2 border-primary bg-primary/10 overflow-hidden">
             <div className="p-6 bg-primary">
               <div className="text-sm text-primary-foreground/80">OUR PICK</div>
@@ -203,7 +213,7 @@ export function Comparison() {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
         <div className="text-center text-muted-foreground">
           Competitor pricing converted to CFA for comparison. Actual pricing
           varies by plan and exchange rate.

@@ -2,6 +2,7 @@ import { ArrowRight, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Reveal } from "@/components/motion-primitives/reveal";
 import { buttonVariants } from "@/components/ui/button";
 
 const stats = [
@@ -21,14 +22,19 @@ export function Hero() {
             AVAILABLE NOW - PAY WITH MOBILE MONEY
           </div>
         </div>
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-normal font-bold text-foreground">
+        <Reveal
+          className="text-4xl sm:text-6xl lg:text-7xl leading-normal font-bold text-foreground"
+        >
           Your business deserves better than a Gmail address.
-        </h1>
-        <p className="text-xl sm:text-2xl lg:text-3xl leading-normal text-muted-foreground">
+        </Reveal>
+        <Reveal
+          delay={0.2}
+          className="text-xl sm:text-2xl lg:text-3xl leading-normal text-muted-foreground"
+        >
           Professional business email with your own domain, AI-powered tools,
           high inbox deliverability, and a focus on privacy. All in one place
           and setup in minutes.
-        </p>
+        </Reveal>
         <div className="flex flex-col sm:flex-row sm:items-center mt-1.5 gap-3">
           <Link
             href={"/auth/sign-up"}
@@ -44,7 +50,10 @@ export function Hero() {
             See pricing
           </Link>
         </div>
-        <div className="mt-6 sm:mt-22 relative p-1.5 rounded-2xl bg-background flex-col border shadow w-full space-y-1.5">
+        <Reveal
+          delay={0.3}
+          className="mt-6 sm:mt-22 relative p-1.5 rounded-2xl bg-background flex-col border shadow w-full space-y-1.5"
+        >
           <div className="hidden pl-3 md:flex gap-3 items-center">
             <div className="flex gap-1.5">
               <div className="h-3 w-3 rounded-full bg-red-500" />
@@ -77,7 +86,7 @@ export function Hero() {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { Plus } from "lucide-react";
 
+import { Reveal } from "@/components/motion-primitives/reveal";
 import {
   Accordion,
   AccordionContent,
@@ -52,9 +53,9 @@ export function Faq() {
       <div className="container px-6 mx-auto">
         <div className="space-y-3 text-center">
           <div className="text-muted-foreground">FAQ</div>
-          <div className="text-3xl sm:text-4xl lg:text-5xl leading-normal font-bold text-balance">
+          <Reveal className="text-3xl sm:text-4xl lg:text-5xl leading-normal font-bold text-balance">
             Frequently asked.
-          </div>
+          </Reveal>
         </div>
         <Accordion
           defaultValue={["mobile-money"]}
