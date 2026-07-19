@@ -31,14 +31,14 @@ export function Hero() {
         </p>
         <div className="flex flex-col sm:flex-row sm:items-center mt-1.5 gap-3">
           <Link
-            href={"#"}
+            href={"/auth/sign-up"}
             className={buttonVariants({ variant: "default", size: "lg" })}
           >
             Get my business email
             <ArrowRight />
           </Link>
           <Link
-            href={"#"}
+            href={"#pricing"}
             className={buttonVariants({ variant: "outline", size: "lg" })}
           >
             See pricing

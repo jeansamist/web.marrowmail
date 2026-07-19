@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const comparisonFeatures = [
   {
@@ -72,9 +73,7 @@ export function Comparison() {
           </div>
           <div className="flex-1 border-x border-primary bg-primary/10">
             <div className="p-6 bg-primary h-[105.6px]">
-              <div className="text-sm text-primary-foreground/80">
-                OUR PICK
-              </div>
+              <div className="text-sm text-primary-foreground/80">OUR PICK</div>
               <div className="text-sm sm:text-base lg:text-lg font-bold text-primary-foreground">
                 MarrowMail
               </div>
@@ -132,9 +131,7 @@ export function Comparison() {
         <div className="flex xl:hidden flex-col gap-4">
           <div className="rounded-2xl border-2 border-primary bg-primary/10 overflow-hidden">
             <div className="p-6 bg-primary">
-              <div className="text-sm text-primary-foreground/80">
-                OUR PICK
-              </div>
+              <div className="text-sm text-primary-foreground/80">OUR PICK</div>
               <div className="text-sm sm:text-base lg:text-lg font-bold text-primary-foreground">
                 MarrowMail
               </div>
@@ -156,7 +153,9 @@ export function Comparison() {
             </div>
             <div className="p-6 pt-2">
               <Button className={"w-full"}>
-                Get my email <ArrowRight />
+                <Link href={"/auth/sign-up"}>
+                  Get my email <ArrowRight />
+                </Link>
               </Button>
             </div>
           </div>
