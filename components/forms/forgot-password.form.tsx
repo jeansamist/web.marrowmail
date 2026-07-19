@@ -1,24 +1,24 @@
-"use client"
+"use client";
 
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { Button } from "@/components/ui/button"
-import { Field, FieldGroup } from "@/components/ui/field"
-import { InputField } from "@/components/ui/fields"
-import { useCurrentLocaleUrl, useI18n } from "@/lib/i18n/client"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
+import { Field, FieldGroup } from "@/components/ui/field";
+import { InputField } from "@/components/ui/fields";
+import { useCurrentLocaleUrl, useI18n } from "@/lib/i18n/client";
 import {
   forgotPasswordSchema,
   ForgotPasswordSchema,
-} from "@/schemas/auth.schemas"
-import { forgotPassword } from "@/services/auth.services"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { LoaderCircle, MailCheck } from "lucide-react"
-import Link from "next/link"
-import { FunctionComponent, useState } from "react"
-import { useForm } from "react-hook-form"
+} from "@/schemas/auth.schemas";
+import { forgotPassword } from "@/services/auth.services";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { LoaderCircle, MailCheck } from "lucide-react";
+import Link from "next/link";
+import { FunctionComponent, useState } from "react";
+import { useForm } from "react-hook-form";
 
 export type ForgotPasswordFormProps = {
-  [key: string]: unknown
-}
+  [key: string]: unknown;
+};
 
 export const ForgotPasswordForm: FunctionComponent<
   ForgotPasswordFormProps
@@ -29,20 +29,20 @@ export const ForgotPasswordForm: FunctionComponent<
     defaultValues: {
       email: "",
     },
-  })
-  const [errorMessage, setErrorMessage] = useState<string>()
-  const [sent, setSent] = useState(false)
-  const t = useI18n()
-  const { currentLocaleUrl } = useCurrentLocaleUrl()
+  });
+  const [errorMessage, setErrorMessage] = useState<string>();
+  const [sent, setSent] = useState(false);
+  const t = useI18n();
+  const { currentLocaleUrl } = useCurrentLocaleUrl();
 
   async function onSubmit(data: ForgotPasswordSchema) {
-    const result = await forgotPassword(data)
+    const result = await forgotPassword(data);
     if (result instanceof Error) {
-      setErrorMessage(result.message ?? t("unknownError"))
-      return
+      setErrorMessage(result.message ?? t("unknownError"));
+      return;
     }
-    setErrorMessage(undefined)
-    setSent(true)
+    setErrorMessage(undefined);
+    setSent(true);
   }
 
   if (sent) {
@@ -55,13 +55,13 @@ export const ForgotPasswordForm: FunctionComponent<
             {t("auth.forgotPassword.success.description")}
           </AlertDescription>
         </Alert>
-        <Button type="button" asChild variant="link" className="w-fit px-0">
+        <Button type="button" variant="link" className="w-fit px-0">
           <Link href={currentLocaleUrl("/auth/sign-in")}>
             {t("auth.forgotPassword.signIn.link")}
           </Link>
         </Button>
       </FieldGroup>
-    )
+    );
   }
 
   return (
@@ -90,7 +90,7 @@ export const ForgotPasswordForm: FunctionComponent<
               <LoaderCircle className="animate-spin" />
             )}
           </Button>
-          <Button type="button" asChild variant="link">
+          <Button type="button" variant="link">
             <Link href={currentLocaleUrl("/auth/sign-in")}>
               {t("auth.forgotPassword.signIn.link")}
             </Link>
@@ -98,5 +98,5 @@ export const ForgotPasswordForm: FunctionComponent<
         </Field>
       </FieldGroup>
     </form>
-  )
-}
+  );
+};

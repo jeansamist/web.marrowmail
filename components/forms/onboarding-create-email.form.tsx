@@ -1,40 +1,40 @@
-"use client"
+"use client";
 
-import { useAuth } from "@/contexts/auth.context"
-import { useOnboarding } from "@/contexts/onboarding.context"
-import { useCurrentLocaleUrl, useI18n } from "@/lib/i18n/client"
+import { useAuth } from "@/contexts/auth.context";
+import { useOnboarding } from "@/contexts/onboarding.context";
+import { useCurrentLocaleUrl, useI18n } from "@/lib/i18n/client";
 import {
   onboardingCreateEmailSchema,
   OnboardingCreateEmailSchema,
-} from "@/schemas/onboarding.schemas"
-import { setupMailAccount } from "@/services/onboarding.services"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { ArrowLeft, LoaderCircle, Plus, Trash } from "lucide-react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { FunctionComponent, useEffect, useState } from "react"
-import { useFieldArray, useForm } from "react-hook-form"
-import { Alert, AlertDescription } from "../ui/alert"
-import { Button } from "../ui/button"
-import { Card, CardContent } from "../ui/card"
-import { Field, FieldError, FieldGroup, FieldLabel } from "../ui/field"
+} from "@/schemas/onboarding.schemas";
+import { setupMailAccount } from "@/services/onboarding.services";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ArrowLeft, LoaderCircle, Plus, Trash } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { FunctionComponent, useEffect, useState } from "react";
+import { useFieldArray, useForm } from "react-hook-form";
+import { Alert, AlertDescription } from "../ui/alert";
+import { Button } from "../ui/button";
+import { Card, CardContent } from "../ui/card";
+import { Field, FieldError, FieldGroup, FieldLabel } from "../ui/field";
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
   InputGroupText,
-} from "../ui/input-group"
+} from "../ui/input-group";
 
 export type OnboardingCreateEmailFormProps = {
-  domainParams: string
-  [key: string]: unknown
-}
+  domainParams: string;
+  [key: string]: unknown;
+};
 
 export const OnboardingCreateEmailForm: FunctionComponent<
   OnboardingCreateEmailFormProps
 > = ({ domainParams }) => {
-  const onboarding = useOnboarding()
-  const auth = useAuth()
+  const onboarding = useOnboarding();
+  const auth = useAuth();
   const form = useForm<OnboardingCreateEmailSchema>({
     resolver: zodResolver(onboardingCreateEmailSchema),
     mode: "onChange",
@@ -48,44 +48,44 @@ export const OnboardingCreateEmailForm: FunctionComponent<
         },
       ],
     },
-  })
-  const [errorMessage, setErrorMessage] = useState<string>()
-  const t = useI18n()
-  const { currentLocaleUrl } = useCurrentLocaleUrl()
-  const router = useRouter()
+  });
+  const [errorMessage, setErrorMessage] = useState<string>();
+  const t = useI18n();
+  const { currentLocaleUrl } = useCurrentLocaleUrl();
+  const router = useRouter();
   const { fields, remove, append } = useFieldArray({
     control: form.control,
     name: "data",
-  })
+  });
   // Check if the domain in the context matches the domain in the URL params
   useEffect(() => {
     const contextStepValues = onboarding.steps[0].values as
       | { domain?: string }
-      | undefined
-    const contextDomain = contextStepValues?.domain
+      | undefined;
+    const contextDomain = contextStepValues?.domain;
     if (contextDomain && contextDomain !== domainParams) {
       // If they don't match, redirect to the correct URL with the domain from the context
-      router.push(currentLocaleUrl(`/onboarding/`))
+      router.push(currentLocaleUrl(`/onboarding/`));
     }
-  }, [currentLocaleUrl, domainParams, onboarding.steps, router])
+  }, [currentLocaleUrl, domainParams, onboarding.steps, router]);
 
   // Update the context current step
   useEffect(() => {
-    onboarding.setCurrentStep(2)
-  }, [onboarding])
+    onboarding.setCurrentStep(2);
+  }, [onboarding]);
 
   const onSubmit = async (data: OnboardingCreateEmailSchema) => {
-    const result = await setupMailAccount(data, domainParams)
+    const result = await setupMailAccount(data, domainParams);
     if (result instanceof Error) {
-      setErrorMessage(result.message ?? t("unknownError"))
-      return
+      setErrorMessage(result.message ?? t("unknownError"));
+      return;
     }
     router.push(
       currentLocaleUrl(
-        `/onboarding/pay?domain=${encodeURIComponent(domainParams)}`
-      )
-    )
-  }
+        `/onboarding/pay?domain=${encodeURIComponent(domainParams)}`,
+      ),
+    );
+  };
   return (
     <>
       <form
@@ -179,10 +179,10 @@ export const OnboardingCreateEmailForm: FunctionComponent<
           </CardContent>
         </Card>
         <Field orientation="horizontal">
-          <Button variant={"outline"} asChild>
+          <Button variant={"outline"}>
             <Link
               href={currentLocaleUrl(
-                `/onboarding/configure-dns?domain=${domainParams}`
+                `/onboarding/configure-dns?domain=${domainParams}`,
               )}
             >
               <ArrowLeft />
@@ -202,5 +202,5 @@ export const OnboardingCreateEmailForm: FunctionComponent<
         </Field>
       </form>
     </>
-  )
-}
+  );
+};

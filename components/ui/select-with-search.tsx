@@ -17,10 +17,12 @@ import { Popover, PopoverContent, PopoverTrigger } from "./popover"
 import { Select } from "./select"
 
 export const SelectWithSearch: FunctionComponent<
-  ComponentProps<typeof Select> & {
+  Omit<ComponentProps<typeof Select>, "value" | "onValueChange" | "defaultValue"> & {
     items: { value: string; label: ReactNode }[]
     placeholder?: string
     searchPLaceholder?: string
+    value?: string
+    onValueChange?: (value: string) => void
   }
 > = ({ items, placeholder, searchPLaceholder, ...props }) => {
   const [open, setOpen] = useState<boolean>(false)
@@ -29,24 +31,26 @@ export const SelectWithSearch: FunctionComponent<
   return (
     <div>
       <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            role="combobox"
-            aria-expanded={open}
-            className="w-full justify-between border-input bg-transparent px-3 font-normal outline-offset-0 outline-none hover:bg-transparent focus-visible:outline-[3px] dark:bg-input/30 dark:hover:bg-input/30"
-          >
-            <span className={cn("truncate", !value && "text-muted-foreground")}>
-              {value
-                ? items.find((items) => items.value === value)?.label
-                : placeholder || "Select an item"}
-            </span>
-            <ChevronDownIcon
-              size={16}
-              className="shrink-0 text-muted-foreground/80"
-              aria-hidden="true"
+        <PopoverTrigger
+          render={
+            <Button
+              variant="outline"
+              role="combobox"
+              aria-expanded={open}
+              className="w-full justify-between border-input bg-transparent px-3 font-normal outline-offset-0 outline-none hover:bg-transparent focus-visible:outline-[3px] dark:bg-input/30 dark:hover:bg-input/30"
             />
-          </Button>
+          }
+        >
+          <span className={cn("truncate", !value && "text-muted-foreground")}>
+            {value
+              ? items.find((items) => items.value === value)?.label
+              : placeholder || "Select an item"}
+          </span>
+          <ChevronDownIcon
+            size={16}
+            className="shrink-0 text-muted-foreground/80"
+            aria-hidden="true"
+          />
         </PopoverTrigger>
         <PopoverContent
           className="w-full min-w-[var(--radix-popper-anchor-width)] border-input p-0"

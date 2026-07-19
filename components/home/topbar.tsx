@@ -11,6 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useCurrentLocaleUrl } from "@/lib/i18n/client";
 
 const navLinks = [
   { label: "Features", href: "#" },
@@ -21,6 +22,7 @@ const navLinks = [
 ];
 
 export function Topbar() {
+  const { currentLocaleUrl } = useCurrentLocaleUrl();
   return (
     <div className="h-16 w-full border-b">
       <div className="container px-6 mx-auto h-16 flex items-center justify-between">
@@ -43,13 +45,13 @@ export function Topbar() {
 
         <div className="hidden lg:flex items-center gap-3">
           <Link
-            href={"#"}
+            href={currentLocaleUrl("/auth/sign-in")}
             className={buttonVariants({ variant: "ghost", size: "lg" })}
           >
             Sign in
           </Link>
           <Link
-            href={"#"}
+            href={currentLocaleUrl("/auth/sign-up")}
             className={buttonVariants({ variant: "default", size: "lg" })}
           >
             Get my business email
@@ -59,7 +61,9 @@ export function Topbar() {
 
         <Sheet>
           <SheetTrigger
-            render={<Button variant="ghost" size="icon" className="lg:hidden" />}
+            render={
+              <Button variant="ghost" size="icon" className="lg:hidden" />
+            }
           >
             <Menu />
             <span className="sr-only">Open menu</span>
@@ -80,7 +84,7 @@ export function Topbar() {
               </div>
               <div className="flex flex-col gap-3">
                 <SheetClose
-                  render={<Link href={"#"} />}
+                  render={<Link href={currentLocaleUrl("/auth/sign-in")} />}
                   className={buttonVariants({
                     variant: "outline",
                     size: "lg",
@@ -89,7 +93,7 @@ export function Topbar() {
                   Sign in
                 </SheetClose>
                 <SheetClose
-                  render={<Link href={"#"} />}
+                  render={<Link href={currentLocaleUrl("/auth/sign-up")} />}
                   className={buttonVariants({
                     variant: "default",
                     size: "lg",

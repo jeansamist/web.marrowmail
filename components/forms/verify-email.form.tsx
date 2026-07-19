@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Button } from "@/components/ui/button"
-import { Field, FieldGroup } from "@/components/ui/field"
-import { InputField } from "@/components/ui/fields"
-import { useCurrentLocaleUrl, useI18n } from "@/lib/i18n/client"
-import { verifyEmailSchema, VerifyEmailSchema } from "@/schemas/auth.schemas"
-import { verifyEmail } from "@/services/auth.services"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { LoaderCircle } from "lucide-react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { FunctionComponent, useState } from "react"
-import { useForm } from "react-hook-form"
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
+import { Field, FieldGroup } from "@/components/ui/field";
+import { InputField } from "@/components/ui/fields";
+import { useCurrentLocaleUrl, useI18n } from "@/lib/i18n/client";
+import { verifyEmailSchema, VerifyEmailSchema } from "@/schemas/auth.schemas";
+import { verifyEmail } from "@/services/auth.services";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { LoaderCircle } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { FunctionComponent, useState } from "react";
+import { useForm } from "react-hook-form";
 
 export type VerifyEmailFormProps = {
-  email: string
-}
+  email: string;
+};
 
 export const VerifyEmailForm: FunctionComponent<VerifyEmailFormProps> = ({
   email,
@@ -28,20 +28,20 @@ export const VerifyEmailForm: FunctionComponent<VerifyEmailFormProps> = ({
       email,
       emailVerificationCode: "",
     },
-  })
-  const [errorMessage, setErrorMessage] = useState<string>()
-  const t = useI18n()
-  const { currentLocaleUrl } = useCurrentLocaleUrl()
-  const router = useRouter()
+  });
+  const [errorMessage, setErrorMessage] = useState<string>();
+  const t = useI18n();
+  const { currentLocaleUrl } = useCurrentLocaleUrl();
+  const router = useRouter();
 
   async function onSubmit(data: VerifyEmailSchema) {
-    const result = await verifyEmail(data)
+    const result = await verifyEmail(data);
     if (result instanceof Error) {
-      setErrorMessage(result.message ?? t("unknownError"))
-      return
+      setErrorMessage(result.message ?? t("unknownError"));
+      return;
     }
-    setErrorMessage(undefined)
-    router.push(currentLocaleUrl("/onboarding"))
+    setErrorMessage(undefined);
+    router.push(currentLocaleUrl("/onboarding"));
   }
 
   return (
@@ -69,7 +69,7 @@ export const VerifyEmailForm: FunctionComponent<VerifyEmailFormProps> = ({
               <LoaderCircle className="animate-spin" />
             )}
           </Button>
-          <Button type="button" asChild variant="link">
+          <Button type="button" variant="link">
             <Link href={currentLocaleUrl("/auth/sign-in")}>
               {t("auth.verifyEmail.signIn.link")}
             </Link>
@@ -77,5 +77,5 @@ export const VerifyEmailForm: FunctionComponent<VerifyEmailFormProps> = ({
         </Field>
       </FieldGroup>
     </form>
-  )
-}
+  );
+};
