@@ -42,7 +42,7 @@ export default async function Page({
 
   const t = await getI18n();
   return (
-    <div className="max-w-xl w-full h-full mx-auto py-22 space-y-6">
+    <div className="max-w-xl w-full mx-auto py-22 space-y-6">
       <div className="w-full">
         <div className="text-xl sm:text-2xl lg:text-3xl leading-normal font-bold">
           {t("auth.resetPassword.page.title")}
