@@ -1,6 +1,7 @@
 import { ArrowRight, Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const includedItems = [
   "Your own branded email address",
@@ -66,9 +67,9 @@ export function Pricing() {
               </div>
             </div>
             <div className="border-t pt-6 text-muted-foreground text-sm sm:text-base lg:text-lg">
-              Professional business email with AI-powered tools, secure
-              hosting, and flexible payments. Everything you need to
-              communicate professionally — in one price.
+              Professional business email with AI-powered tools, secure hosting,
+              and flexible payments. Everything you need to communicate
+              professionally — in one price.
             </div>
             <div className="space-y-3">
               <div className="text-sm text-muted-foreground">
@@ -86,7 +87,9 @@ export function Pricing() {
               </div>
             </div>
             <Button size="lg" className="w-full">
-              Get my business email <ArrowRight />
+              <Link href={"/auth/sign-up"}>
+                Get my business email <ArrowRight />
+              </Link>
             </Button>
             <div className="text-center text-sm text-muted-foreground">
               SETUP IN MINUTES · NO CARD REQUIRED TO START
