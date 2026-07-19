@@ -13,7 +13,7 @@ const stats = [
 
 export function Hero() {
   return (
-    <div className="flex-1 py-22">
+    <div className="flex-1 py-6 lg:py-22">
       <div className="container px-6 mx-auto flex flex-col gap-1.5">
         <div>
           <div className="px-3 py-1.5 border rounded-2xl bg-background text-xs md:text-base text-muted-foreground inline-flex items-center gap-3">

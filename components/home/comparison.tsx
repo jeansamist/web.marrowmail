@@ -1,5 +1,3 @@
-import { ArrowRight } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -88,7 +86,7 @@ export function Comparison() {
             ))}
             <div className="h-16 border-t border-primary px-6 flex items-center">
               <Button className={"w-full"}>
-                Get my email <ArrowRight />
+                <Link href={"/auth/sign-up"}>Get my email</Link>
               </Button>
             </div>
           </div>
@@ -153,9 +151,7 @@ export function Comparison() {
             </div>
             <div className="p-6 pt-2">
               <Button className={"w-full"}>
-                <Link href={"/auth/sign-up"}>
-                  Get my email <ArrowRight />
-                </Link>
+                <Link href={"/auth/sign-up"}>Get my email</Link>
               </Button>
             </div>
           </div>
