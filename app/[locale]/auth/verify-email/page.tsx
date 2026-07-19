@@ -1,33 +1,41 @@
-import { VerifyEmailForm } from "@/components/forms/verify-email.form"
-import { getI18n, getStaticParams, setStaticParamsLocale } from "@/lib/i18n/server"
-import { Metadata } from "next"
+import { VerifyEmailForm } from "@/components/forms/verify-email.form";
+import {
+  getI18n,
+  getStaticParams,
+  setStaticParamsLocale,
+} from "@/lib/i18n/server";
+import { Metadata } from "next";
 
 export function generateStaticParams() {
-  return getStaticParams()
+  return getStaticParams();
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const { locale } = await params
-  setStaticParamsLocale(locale)
-  const t = await getI18n()
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  setStaticParamsLocale(locale);
+  const t = await getI18n();
   return {
     title: t("auth.verifyEmail.meta.title"),
     description: t("auth.verifyEmail.meta.description"),
-  }
+  };
 }
 export default async function Page({
   params,
   searchParams,
 }: {
-  params: Promise<{ locale: string }>
-  searchParams: Promise<{ email?: string }>
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<{ email?: string }>;
 }) {
-  const { locale } = await params
-  setStaticParamsLocale(locale)
-  const { email } = await searchParams
-  const t = await getI18n()
+  const { locale } = await params;
+  setStaticParamsLocale(locale);
+  const { email } = await searchParams;
+  const t = await getI18n();
   return (
-    <div className="flex flex-col items-center justify-center max-w-xl w-full h-full mx-auto py-22 space-y-6">
+    <div className="max-w-xl w-full h-full mx-auto py-22 space-y-6">
       <div className="w-full">
         <div className="text-xl sm:text-2xl lg:text-3xl leading-normal font-bold">
           {t("auth.verifyEmail.page.title")}
@@ -46,5 +54,5 @@ export default async function Page({
         <VerifyEmailForm email={email ?? ""} />
       </div>
     </div>
-  )
+  );
 }

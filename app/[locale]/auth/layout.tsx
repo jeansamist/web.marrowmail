@@ -12,7 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <div className="h-screen w-full bg-sidebar p-3 flex gap-3 flex-col xl:flex-row overflow-hidden">
-      <div className="flex-1 bg-background rounded-2xl border shadow-sm p-6">
+      <div className="flex-1 bg-background rounded-2xl border shadow-sm p-6 overflow-auto">
         {children}
       </div>
       <div className="max-w-2xl hidden xl:flex items-end p-6 relative">
