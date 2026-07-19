@@ -10,9 +10,9 @@ export function Positioning() {
             Look professional every time you hit send.
           </div>
           <div className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-5xl w-full text-balance">
-            When a client receives an email from a free address, it changes
-            how they perceive the business. A custom domain builds trust
-            before the conversation starts.
+            When a client receives an email from a free address, it changes how
+            they perceive the business. A custom domain builds trust before the
+            conversation starts.
           </div>
           <div className="flex flex-col lg:flex-row gap-3 mt-6">
             <div className="bg-muted border flex-1 rounded-2xl p-6 space-y-6">
@@ -35,7 +35,7 @@ export function Positioning() {
             <div className="bg-primary/10 border relative border-primary overflow-hidden flex-1 rounded-2xl p-6 flex flex-col space-y-6">
               <div className="flex items-center gap-3 text-primary">
                 <Check />
-                <div className="absolute top-0 right-0 bg-primary text-primary-foreground rounded-bl-2xl p-2 px-4">
+                <div className="text-xs absolute top-0 right-0 bg-primary text-primary-foreground rounded-bl-2xl p-2 px-4">
                   THE MARROWMAIL WAY
                 </div>
                 <div className="text-sm sm:text-base lg:text-lg font-medium">
